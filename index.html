@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUAL CORE 2026GPTs | The Zenith of Intelligence</title>
+    <style>
+        :root {
+            --bg-black: #050505;
+            --card-black: #0f0f0f;
+            --gold: #C9A24D;
+            --gold-bright: #f1d592;
+            --gold-dark: #8a6d29;
+            --white: #FFFFFF;
+            --text-gray: #a1a1a1;
+            --border: rgba(201, 162, 77, 0.15);
+            --glass: rgba(15, 15, 15, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--white);
+            font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            letter-spacing: 0.25em;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            font-family: sans-serif;
+            transition: color 0.3s;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at 50% 50%, #151515 0%, #000 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150vw;
+            height: 150vw;
+            background: radial-gradient(circle at center, rgba(201, 162, 77, 0.05) 0%, transparent 50%);
+            transform: translate(-50%, -50%);
+            animation: pulse 8s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+        }
+
+        .hero-label {
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.6em;
+            color: var(--gold);
+            margin-bottom: 24px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 9vw, 5rem);
+            font-weight: 400;
+            margin-bottom: 30px;
+            letter-spacing: 0.15em;
+            background: linear-gradient(to bottom, #fff 30%, #666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 20px 60px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            font-family: sans-serif;
+            transition: all 0.4s;
+            border-radius: 1px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+
+        .hero-cta small {
+            display: block;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(201, 162, 77, 0.2);
+            filter: brightness(1.1);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 160px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .section-header .jp-sub {
+            color: var(--text-gray);
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-header .en-sub {
+            color: var(--text-gray);
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        /* Features Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--card-black);
+            padding: 60px 40px;
+            border: 1px solid var(--border);
+            transition: 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.5s;
+            transform-origin: right;
+        }
+
+        .feature-card:hover {
+            background: #151515;
+            border-color: rgba(201, 162, 77, 0.4);
+        }
+
+        .feature-card:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 30px;
+            color: var(--gold);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.15em;
+        }
+
+        .feature-card .en-title {
+            display: block;
+            font-family: sans-serif;
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .feature-card .en-desc {
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            font-style: italic;
+        }
+
+        /* Spec Table */
+        .spec-container {
+            background: var(--card-black);
+            border: 1px solid var(--border);
+            padding: 2px;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: sans-serif;
+        }
+
+        .spec-table th, .spec-table td {
+            padding: 30px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .spec-table th {
+            color: var(--gold);
+            font-weight: 400;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .spec-table td {
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        .spec-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight {
+            color: var(--gold-bright);
+            font-weight: 600;
+        }
+
+        /* Pricing Section */
+        .price-card {
+            max-width: 720px;
+            margin: 0 auto;
+            border: 1px solid var(--gold);
+            padding: 80px 50px;
+            background: linear-gradient(180deg, #111 0%, #000 100%);
+            position: relative;
+            text-align: center;
+        }
+
+        .price-card::before {
+            content: 'PREMIUM EARLY ACCESS';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: #000;
+            padding: 4px 24px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+        }
+
+        .price-label {
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .price-regular {
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            color: var(--text-gray);
+            font-family: sans-serif;
+            margin-bottom: 5px;
+            opacity: 0.5;
+        }
+
+        .price-amount {
+            font-size: clamp(3rem, 10vw, 4.5rem);
+            font-family: sans-serif;
+            margin: 10px 0 30px;
+            display: block;
+            color: var(--gold-bright);
+            font-weight: 300;
+        }
+
+        .price-amount span {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-left: -10px;
+        }
+
+        .philosophy-text {
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--white);
+            margin-bottom: 40px;
+            padding: 0 40px;
+            letter-spacing: 0.02em;
+        }
+
+        .philosophy-sub {
+            display: block;
+            margin-top: 20px;
+            font-style: normal;
+            font-family: "YuMincho", serif;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            letter-spacing: 0.1em;
+            line-height: 2;
+        }
+
+        /* Footer */
+        footer {
+            padding: 100px 0 40px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 0.3em;
+            margin-bottom: 40px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .copyright {
+            font-family: sans-serif;
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            letter-spacing: 0.2em;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            section { padding: 100px 0; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            .price-card { padding: 60px 20px; }
+            .philosophy-text { padding: 0; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">DUAL CORE 2026GPTs</a>
+                <div class="nav-links">
+                    <a href="#concept">Concept</a>
+                    <a href="#spec">Spec</a>
+                    <a href="#price">Access</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content fade-in">
+                <span class="hero-label">The Zenith of Intelligence</span>
+                <h1>DUAL CORE 2026GPTs</h1>
+                <a href="https://note.com/famous_zebra937/n/n741a9dd53c00?sub_rt=share_pw" target="_blank" class="hero-cta">
+                    知性の深淵へ
+                    <small>ENTER THE DEPTH</small>
+                </a>
+            </div>
+        </section>
+
+        <section id="concept">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="jp-sub">思考の限界を超え、知性の深淵へ</span>
+                    <h2>CONCEPT</h2>
+                    <span class="en-sub">Pushing the boundaries of thought</span>
+                </div>
+                
+                <div class="feature-grid">
+                    <div class="feature-card fade-in">
+                        <div class="icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>二重思考回路</h3>
+                        <span class="en-title">Dual Thought Architecture</span>
+                        <p>直感的な創造と緻密な論理。二つの独立したコアが同期し、かつてない多角的な解答を導き出します。</p>
+                        <p class="en-desc">Intuitive creation meets precise logic. Two independent cores synchronize to deliver multi-faceted solutions like never before.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <div class="icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>ゼロ・レイテンシ</h3>
+                        <span class="en-title">Zero Latency Response</span>
+                        <p>思考の速度を妨げない。最適化されたアーキテクチャにより、膨大なデータ解析も瞬時に完了します。</p>
+                        <p class="en-desc">Never hinder the speed of thought. Our optimized architecture ensures massive data analysis is completed in an instant.</p>
+                    </div>
+
+                    <div class="feature-card fade-in">
+                        <div class="icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0110 0v4"/>
+                            </svg>
+                        </div>
+                        <h3>絶対的秘匿性</h3>
+                        <span class="en-title">Absolute Confidentiality</span>
+                        <p>すべての対話は軍事級の暗号化によって保護されます。あなたのアイデアは、あなただけのものです。</p>
+                        <p class="en-desc">Every dialogue is protected by military-grade encryption. Your ideas remain exclusively yours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="spec">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="jp-sub">他を圧倒する、圧倒的な性能</span>
+                    <h2>SPECIFICATION</h2>
+                    <span class="en-sub">The new standard of performance</span>
+                </div>
+
+                <div class="spec-container fade-in">
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Legacy Models</th>
+                                <th>DUAL CORE 2026GPTs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Logical Reasoning / 論理思考</td>
+                                <td>Standard</td>
+                                <td class="highlight">Omni-Logic +200%</td>
+                            </tr>
+                            <tr>
+                                <td>Context Window / 文脈保持</td>
+                                <td>32k tokens</td>
+                                <td class="highlight">1M+ tokens</td>
+                            </tr>
+                            <tr>
+                                <td>Update Frequency / 更新頻度</td>
+                                <td>Monthly</td>
+                                <td class="highlight">Real-time Stream</td>
+                            </tr>
+                            <tr>
+                                <td>Specialized Mode / 専門特化</td>
+                                <td>General</td>
+                                <td class="highlight">All Disciplines</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="price">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>PRICING PHILOSOPHY</h2>
+                    <span class="en-sub">For those who see the future</span>
+                </div>
+
+                <div class="price-card fade-in">
+                    <span class="price-label">Standard Value</span>
+                    <div class="price-regular">¥3,980</div>
+                    
+                    <span class="price-label" style="color: var(--gold);">Early Access Tier</span>
+                    <span class="price-amount">¥3,480<span>/ mo.</span></span>
+                    
+                    <div class="philosophy-text">
+                        "This is not a discount. This is a Premium Early Access Phase for those who understand the philosophy before mass exposure."
+                        <span class="philosophy-sub">これは単なる値引きではありません。大衆に普及する前に、この哲学を共有できる方々のためのプレミアム先行フェーズです。</span>
+                    </div>
+                    
+                    <a href="https://note.com/famous_zebra937/n/n741a9dd53c00?sub_rt=share_pw" target="_blank" class="hero-cta">
+                        JOIN THE ELITE
+                        <small>知性の特権階級へ</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <span class="footer-logo">DUAL CORE 2026GPTs</span>
+            <p class="copyright">&copy; 2026 DUAL CORE 2026GPTs. THE NEW STANDARD OF INTELLIGENCE.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '12px 0';
+                header.style.background = 'rgba(5, 5, 5, 0.95)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.background = 'rgba(15, 15, 15, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>
